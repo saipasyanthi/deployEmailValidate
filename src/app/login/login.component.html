@@ -1,0 +1,33 @@
+<!--Login Body-->
+<div class="content" role="main">
+    <h2>{{ title }}</h2>
+    <br/>
+    
+    <form class="example-form" #myForm="ngForm" (ngSubmit)="Register(myForm)" >
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Enter your Username</mat-label>
+        <input matInput   [(ngModel)]="username" name="username" id="username" required>
+      </mat-form-field>
+             
+      <mat-form-field class="example-full-width">
+      <input matInput placeholder="Enter your Emailid" [(ngModel)]="email" name="email" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" required>
+       </mat-form-field>
+                
+          <mat-form-field class="example-full-width">
+            <mat-label>Enter your Mobile Number</mat-label>
+            <input matInput   [(ngModel)]="phoneno" name="phoneno" id="phoneno" >
+          </mat-form-field>
+  
+          <br/> 
+          <br/>
+        
+          <button mat-raised-button color="primary" [class.spinner]="loading" [disabled]="loading" [disabled]="!myForm.form.valid"> Submit</button>
+  
+          <router-outlet></router-outlet>
+          <br/> 
+          <br/>
+    
+  
+          </form>
+    </div>
