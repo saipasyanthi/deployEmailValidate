@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import{NgForm } from '@angular/forms';
+import {FormControl, FormGroupDirective, NgForm, Validators} from '@angular/forms';
+import {ErrorStateMatcher} from '@angular/material/core';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,13 @@ import{NgForm } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent   {
+
+  emailFormControl = new FormControl('', [
+    Validators.required,
+    Validators.email,    
+  ]);
+
+  matcher = new MyErrorStateMatcher();
 
   
   title = 'Employee Sign Up Form';
@@ -21,20 +29,25 @@ export class LoginComponent   {
   Register(myForm: NgForm ){
 
     console.log(JSON.stringify(myForm.value));
+    console.log(JSON.stringify(this.emailFormControl.value));
     this.loading = true;
     setTimeout(() => {
      // alert(JSON.stringify(myForm.value));
       this.router.navigate(['/home',myForm.value.username]); 
    }, 3000);
-   // alert(JSON.stringify(myForm.value));   
-     // this.router.navigate(['/home',myForm.value.username]); 
-       
-      //   console.log(JSON.stringify(myForm.value));
         
            }
 
 }
 
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const isSubmitted = form && form.submitted;
+    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+  }
+}
 
 
 
