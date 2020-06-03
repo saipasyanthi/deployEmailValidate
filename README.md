@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to [demolink] (https://saipasyanthi.github.io/deployEmailValidate/login). The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to [demolink](https://saipasyanthi.github.io/deployEmailValidate/login). The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding
 
@@ -22,7 +22,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+
 
 
 ![Capture1](https://user-images.githubusercontent.com/65824142/83582346-46415280-a50f-11ea-88f6-f98a36db375d.PNG)
@@ -36,7 +36,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ![Capture5](https://user-images.githubusercontent.com/65824142/83582387-578a5f00-a50f-11ea-9488-01db4593dccb.PNG)
 
 
-
+## Further help
 
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
